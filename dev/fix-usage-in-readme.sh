@@ -7,9 +7,15 @@ CMD="owl"
 usage=$($CMD --help)
 
 awk -v usage="$usage" '
-  BEGIN {state=0; }
+  BEGIN {state=-1; }
   {
-    if ($0 ~ /^```$/) {
+    if (state == -1) {
+      print
+      if ($0 ~ /^## Usage/) {
+        state = 0
+      }
+    }
+    else if ($0 ~ /^```$/) {
       print
       if (state == 0) {
       	print usage
@@ -20,7 +26,7 @@ awk -v usage="$usage" '
       }
     }
     else {
-      if (state == 0 || state == 2) {
+      if (state != -1) {
       	print
       }
     }

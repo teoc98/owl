@@ -11,6 +11,25 @@ Install [Tshark](https://tshark.dev/setup/install/).
 
 It is recommended to install with [pipx](https://pipx.pypa.io/).
 
+```
+pipx install git+https://github.com/teoc98/owl.git
+```
+
+## Permissions
+
+The program needs to be run as the `root` user, or your user account must be configured to be able to
+[use Wireshark/TShark without root access](https://osqa-ask.wireshark.org/questions/7976/wireshark-setup-linux-for-nonroot-user/).
+
+To setup Wireshark to be used by a non-root user:
+
+1. run `sudo usermod -a -G wireshark $USER`;
+2. log out and log back in, or run `newgrp wireshark` in your current shell.
+
+Note that on some OS/distributions the recommended procedure may be different.
+
+> [!WARNING]  
+> If run as the `root` user, cache files will be put by default in `/root/.cache/`.
+
 ## Usage
 
 ```
@@ -40,22 +59,33 @@ options:
   --no-cache            do not read or write to a cache file
 
 press q or CTRL+C to quit
+usage: owl [-h] [-i CAPTURE_INTERFACE] [-f CAPTURE_FILTER] [-a] [-c COLUMNS]
+           [-n SECONDS] [-l LOCALE] [-C CACHE_FILE | --no-cache]
+
+monitor Online Windows Laptops on the local network 🦉
+
+options:
+  -h, --help            show this help message and exit
+  -i CAPTURE_INTERFACE, --interface CAPTURE_INTERFACE
+                        name or idx of interface (default: any)
+  -f CAPTURE_FILTER, --filter CAPTURE_FILTER
+                        packet filter in libpcap filter syntax
+  -a                    anonymize computer names and IP addresses in
+                        visualization
+  -c COLUMNS, --columns COLUMNS
+                        columns to show (n: computer name, i: IP address, T:
+                        timestamp of last seen, I: last seen in ISO 8601
+                        format, A: last seen in "time ago" format; default:
+                        niA)
+  -n SECONDS, --interval SECONDS
+                        specify visualization update interval (default: 2)
+  -l LOCALE, --locale LOCALE
+  -C CACHE_FILE, --cache CACHE_FILE
+                        defaults to $XDG_CACHE_HOME/owl/cache.sqlite
+  --no-cache            do not read or write to a cache file
+
+press q or CTRL+C to quit
 ```
-
-## Permissions
-
-The program needs to be run as the `root` user, or your user account must be configured to be able to
-[use Wireshark/TShark without root access](https://osqa-ask.wireshark.org/questions/7976/wireshark-setup-linux-for-nonroot-user/).
-
-To setup Wireshark to be used by a non-root user:
-
-1. run `sudo usermod -a -G wireshark $USER`;
-2. log out and log back in, or run `newgrp wireshark` in your current shell.
-
-Note that on some OS/distributions the recommended procedure may be different.
-
-> [!WARNING]  
-> If run as the `root` user, cache files will be put by default in `/root/.cache/`.
 
 ## Features
 
