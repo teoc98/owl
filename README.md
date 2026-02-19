@@ -11,6 +11,8 @@ Install [Tshark](https://tshark.dev/setup/install/).
 
 It is recommended to install with [pipx](https://pipx.pypa.io/).
 
+## Usage
+
 ```
 usage: owl [-h] [-i CAPTURE_INTERFACE] [-f CAPTURE_FILTER] [-a] [-c COLUMNS]
            [-n SECONDS] [-l LOCALE] [-C CACHE_FILE | --no-cache]
