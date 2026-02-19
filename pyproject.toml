@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "owl-monitor"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
     { name="Matteo Cavallaro", email="teoc98@users.noreply.github.com" },
 ]
