@@ -143,11 +143,12 @@ def anonimize_ip_address(ip):
          '192.168.0.12' is anonymized as '192.168.XXX.XXX'
     """
     ip_address = ipaddress.ip_address(ip)
+    ip_class = None
     if ip_address.is_private:
-        (class_,) = (c for c in PRIVATE_IPV4_CLASSES if ip_address in c)
-        prefix_len_bits = class_.prefixlen
-    else:
-        prefix_len_bits = 0
+        ip_classes = [c for c in PRIVATE_IPV4_CLASSES if ip_address in c]
+        if ip_classes:
+            ip_class = ip_classes[0]
+    prefix_len_bits = ip_class.prefixlen if ip_class else 0
     prefix_len_octets = prefix_len_bits // 8
     octects = ip.split(".")
     for i in range(prefix_len_octets, 4):
