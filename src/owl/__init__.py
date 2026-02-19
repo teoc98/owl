@@ -18,7 +18,6 @@ import timeago
 import threading
 import xdg.BaseDirectory
 
-
 PROGRAM_NAME = "owl"
 PROGRAM_DESCRIPTION = "monitor Online Windows Laptops on the local network 🦉"
 DEFAULT_CACHE_FILENAME = "cache.sqlite"
@@ -28,10 +27,6 @@ PRIVATE_IPV4_CLASSES = [
     ipaddress.IPv4Network(("172.16.0.0", "255.240.0.0")),
     ipaddress.IPv4Network(("192.168.0.0", "255.255.0.0")),
 ]
-
-# TODO python package; versions in deps
-# TODO and timezones
-# TODO compact db
 
 
 class Base(DeclarativeBase):
