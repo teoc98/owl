@@ -4,7 +4,7 @@
 
 ### Added
 
-- More private IP classes from IP anonimization.
+- More private IP classes for IP anonimization.
 
 ### Fixed
 
