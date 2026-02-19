@@ -9,9 +9,36 @@ Install [Tshark](https://tshark.dev/setup/install/).
 
 ## Install
 
-TODO
+It is recommended to install with [pipx](https://pipx.pypa.io/).
 
-2. Install the package 
+```
+usage: owl [-h] [-i CAPTURE_INTERFACE] [-f CAPTURE_FILTER] [-a] [-c COLUMNS]
+           [-n SECONDS] [-l LOCALE] [-C CACHE_FILE | --no-cache]
+
+monitor Online Windows Laptops on the local network 🦉
+
+options:
+  -h, --help            show this help message and exit
+  -i CAPTURE_INTERFACE, --interface CAPTURE_INTERFACE
+                        name or idx of interface (default: any)
+  -f CAPTURE_FILTER, --filter CAPTURE_FILTER
+                        packet filter in libpcap filter syntax
+  -a                    anonymize computer names and IP addresses in
+                        visualization
+  -c COLUMNS, --columns COLUMNS
+                        columns to show (n: computer name, i: IP address, T:
+                        timestamp of last seen, I: last seen in ISO 8601
+                        format, A: last seen in "time ago" format; default:
+                        niA)
+  -n SECONDS, --interval SECONDS
+                        specify visualization update interval (default: 2)
+  -l LOCALE, --locale LOCALE
+  -C CACHE_FILE, --cache CACHE_FILE
+                        defaults to $XDG_CACHE_HOME/owl/cache.sqlite
+  --no-cache            do not read or write to a cache file
+
+press q or CTRL+C to quit
+```
 
 ## Permissions
 
@@ -40,7 +67,31 @@ Note that on some OS/distributions the recommended procedure may be different.
 ## Usage
 
 ```
-TODO
+usage: owl [-h] [-i CAPTURE_INTERFACE] [-f CAPTURE_FILTER] [-a] [-c COLUMNS]
+           [-n SECONDS] [-l LOCALE] [-C CACHE_FILE | --no-cache]
+
+monitor Online Windows Laptops on the local network 🦉
+
+options:
+  -h, --help            show this help message and exit
+  -i CAPTURE_INTERFACE, --interface CAPTURE_INTERFACE
+                        name or idx of interface (default: any)
+  -f CAPTURE_FILTER, --filter CAPTURE_FILTER
+                        packet filter in libpcap filter syntax
+  -a                    anonymize computer names and IP addresses
+  -c COLUMNS, --columns COLUMNS
+                        columns to show (n: computer name, i: IP address, T:
+                        timestamp of last seen, I: last seen in ISO 8601
+                        format, A: last seen in "time ago" format; default:
+                        niA)
+  -n SECONDS, --interval SECONDS
+                        specify visualization update interval (default: 2)
+  -l LOCALE, --locale LOCALE
+  -C CACHE_FILE, --cache CACHE_FILE
+                        defaults to $XDG_CACHE_HOME/owl/cache.sqlite
+  --no-cache            do not read or write to a cache file
+
+press q or CTRL+C to quit
 ```
 
 ## Future improvements

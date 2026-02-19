@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "owl-monitor"
+version = "0.1.1"
+authors = [
+    { name="Matteo Cavallaro", email="teoc98@users.noreply.github.com" },
+]
+description = "Monitor online Windows laptops on the local network"
+readme = "README.md"
+requires-python = ">=3.9, <4"
+dependencies = [
+    "humanhash3 ~= 0.0.06",
+    "pyshark ~= 0.6",
+    "pyxdg ~= 0.26",
+    "SQLAlchemy ~= 2.0.46",
+    "timeago ~= 1.0.16",
+]
+classifiers = [
+    "Environment :: Console",
+    "Topic :: Utilities",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Information Technology",
+   	"Intended Audience :: System Administrators",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Programming Language :: Python :: 3 :: Only",
+]
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/teoc98/owl"
+
+[project.scripts]
+owl = "owl:main"
+
+[project.optional-dependencies]
+dev = ["black"]

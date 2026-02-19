@@ -229,7 +229,7 @@ def parse_args(argv):
         "-a",
         action="store_true",
         default=False,
-        help="anonymize computer names and IP addresses",
+        help="anonymize computer names and IP addresses in visualization",
         dest="anonymize",
     )
 
