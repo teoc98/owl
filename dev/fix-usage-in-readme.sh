@@ -19,6 +19,7 @@ awk -v usage="$usage" '
       print
       if (state == 0) {
       	print usage
+      	print "asd"
       	state = 1
       }
       else if (state == 1) {
@@ -26,7 +27,7 @@ awk -v usage="$usage" '
       }
     }
     else {
-      if (state != -1) {
+      if (state != 1) {
       	print
       }
     }
